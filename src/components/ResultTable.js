@@ -7,7 +7,7 @@ export default function ResultTable(){
  
   const [data,setData]=useState([]);
   useEffect(()=>{
-    getServerData('https://dull-lime-cheetah-yoke.cyclic.cloud/api/questions/api/results',(res)=>{
+    getServerData('https://dull-lime-cheetah-yoke.cyclic.cloud/api/results',(res)=>{
       setData(res);
     })
   },[])
