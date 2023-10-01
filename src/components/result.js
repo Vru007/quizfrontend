@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/result.css";
+import answers from"../database/data";
 import ResultTable from "./ResultTable";
 import { useDispatch } from "react-redux";
 import {useSelector} from'react-redux';
 import { resetResult } from "../redux/result_reducer";
 import { resetQuestions } from "../redux/question_reducer";
-import {answers} from"../database/data";
 import { usePublishResult } from "../hooks/FetchAnswers";
 import { useState } from "react";
+import { getServerData } from "../helper/helper";
+import axios from"axios";
 function Result() {
   const dispatch = useDispatch();
   const state=useSelector(state=>state);
@@ -16,21 +18,24 @@ function Result() {
   const totalPoints=state.questions.queue.length*10;
   const totalQuestion=totalPoints/10;
   const result=useSelector(state=>state.result.result);
+  const answers=useSelector(state=>state.questions.answers);
   var count=0;
   var rightAns=0;
  var status="";
-  // console.log(result);
+
   for(var i=0;i<totalQuestion;i++){
        if(result[i]!=undefined){
         count+=1;
        }
   }
+  
   for(var i=0;i<totalQuestion;i++){
        if(result[i]==answers[i]){
            rightAns+=1;
        }
   }
   const PointsEarned=rightAns*10;
+  
 // const [status,setStatus]=useEffect('');
   if(PointsEarned<30){
      

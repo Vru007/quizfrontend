@@ -41,7 +41,7 @@ export const useFetchQuestion=()=>{
              setGetData(prev=>({...prev,isloading:false,apiData:{questions,answers}}))
         
              /* Dispatch*/
-             dispatch(Action.startExamAction({question:questions,answers}));
+             dispatch(Action.startExamAction({question:questions,answers:answers}));
             }
             else{
                 throw new Error("No question there")

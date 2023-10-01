@@ -11,7 +11,8 @@ export default function ResultTable(){
       setData(res);
     })
   },[])
-  console.log(data);
+  
+  
   return(
 
     
