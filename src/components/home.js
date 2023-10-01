@@ -23,7 +23,7 @@ function Home(){
            
           <ol>
           <li>You will be asked 10 questions</li>
-          <li>All Questions carry 1 mark</li>
+          <li>All Questions carry 10 mark</li>
           <li>Result will be displayed after completion of the quiz</li>
           </ol>
         
